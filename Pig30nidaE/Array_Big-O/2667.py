@@ -1,93 +1,71 @@
 _ = None
-n = _
-house_list = []
-flag = _
-x_index = _
-y_index = _
-count = 0
 
-class list_info:
-    def __init__(self, x_index, y_index):
-        self.x_index = x_index
-        self.y_index = y_index
-        if x_index == 0:
-            if y_index == 0:
-                self.start_rotate_index = x_index + 1
-                self.finish_rotate_index = x_index - 1
-            elif y_index == n - 1:
-                self.start_rotate_index = y_index - 1
-                self.finish_rotate_index = y_index + 1
-            else:
-                self.start_rotate_index = y_index - 1
-                self.finish_rotate_index = x_index - 1
-        elif x_index == n - 1:
-            if y_index == 0:
-                self.start_rotate_index = y_index + 1
-                self.finish_rotate_index = y_index - 1
-            elif y_index == n - 1:
-                self.start_rotate_index = x_index - 1
-                self.finish_rotate_index = x_index + 1
-            else:
-                self.start_rotate_index = y_index + 1
-                self.finish_rotate_index = x_index + 1
-        else:
-            if y_index == 0: 
-                self.start_rotate_index = x_index + 1
-                self.finish_rotate_index = y_index - 1
-            elif y_index == n - 1:
-                self.start_rotate_index = x_index - 1
-                self.finish_rotate_index = y_index + 1
-            else:
-                self.start_rotate_index = y_index - 1
-                self.finish_rotate_index = _
+input_count = _
+escape_loop_with_no_return = _
 
-    def valid_count_up_y_check(self):
-        try:
-            if self.y_index - 1 == 0:
-                return True
-            else:
-                return False
-        except IndexError:
-            return True
-            
-    def valid_count_up_x_check(self):
-        try:
-            if self.x_index - 1 == 0:
-                self.valid_count_up_y_check(self)
-            else:
-                return False
-        except IndexError:
-            self.valid_count_up_y_check(self)
-            
-    def valid_count_up_index_check(self):
-        return valid_count_up_x_check(self)
-    
-    def rotation_til_finish_index(self):
-        
-        
-def recursive_direction_check(list_info_parm):
-    if list_info_parm.x_index + 1 == n and list_info_parm.y_index + 1 == n:
-        if list_info_parm.valid_count_up_index_check():
-            count += 1
-        else:
-            return _
-    if list_info_parm.valid_count_up_index_check():
-        pass #run direction check
+map_list = list()
+visited_stack = list()
+print_houses_list = list()
+
+map_list_x_index = 0
+map_list_y_index = 0
+house_complex_count = 0
+houses_count = 0
+house_on = 1
+house_off = 0
+
+def exception_handling(node):
+    global input_count, map_list_x_index, map_list_y_index
+    if node in visited_stack:
+        return True
+    if node[0] == input_count or node[0] < 0:
+        return True
+    if node[1] == input_count or node[1] < 0:
+        return True
+
+def run_dfs(node):
+    global escape_loop_with_no_return, visited_stack, map_list, houses_count
+    if exception_handling(node):
+        return escape_loop_with_no_return
+    visited_stack.append(node)
+    if map_list[node[0]][node[1]] == house_off:
+        return escape_loop_with_no_return
     else:
-        new_list_info = list_info(list_info_parm.x_index + , y_index)
-        del list_info_parm
-        recursive_direction_check()
+        houses_count += 1
+        run_dfs((node[0] - 1, node[1]))
+        run_dfs((node[0], node[1] + 1))
+        run_dfs((node[0] + 1, node[1]))
+        run_dfs((node[0], node[1] - 1))
+
+def run_loop_for_dfs():
+    global map_list_y_index, map_list_x_index, input_count, houses_count, house_complex_count, print_houses_list
+    while map_list_y_index < input_count:
+        while map_list_x_index < input_count:
+            run_dfs((map_list_y_index, map_list_x_index))
+            if houses_count != 0:
+                print_houses_list.append(houses_count)
+                house_complex_count += 1
+            houses_count = 0
+            map_list_x_index += 1
+        map_list_y_index += 1
+        map_list_x_index = 0
+
+def print_answer():
+    print_houses_list.sort()
+    print(house_complex_count)
+    for i in print_houses_list:
+        print(i)
 
 def list_input():
-    n = int(input())
-    for i in range(n):
-        house_list[i] = list(map(int, input().split()))
+    global input_count, map_list
+    input_count = int(input())
+    for i in range(input_count):
+        map_list.append(list(map(int, input())))
 
 def main():
     list_input()
-    
-    first_list_info = list_info(0, 0)    
-    recursive_direction_check(first_list_info)
+    run_loop_for_dfs()
+    print_answer()
 
 if __name__ == '__main__':
     main()
