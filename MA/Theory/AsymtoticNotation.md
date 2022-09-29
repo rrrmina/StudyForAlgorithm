@@ -43,7 +43,7 @@
    삽입 정렬, 선택 정렬 등
  - O(2^n) : 지수승. 모든 부분 집합 검색. 브루노 포스(모든 경우 탐색)
  - O(n!) : 모든 순열 검색 
-
+ 
 #### 참고 자료
-[알고리즘 이론 2강.점근적 표기법(Asymptotic notation)](https://chayan-memorias.tistory.com/100) </br>
+[알고리즘 이론 2강.점근적 표기법(Asymptotic notation)](https://chayan-memorias.tistory.com/100)  </br>
 [알고리즘과 시간 복잡도](https://feel5ny.github.io/2017/12/09/CS_01/)

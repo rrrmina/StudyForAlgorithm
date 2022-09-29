@@ -1,7 +1,7 @@
 package MA.Practice.week00;
 
 import java.util.Scanner;
-
+// 최소, 최대 https://www.acmicpc.net/problem/10818
 public class P10818 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,5 +17,4 @@ public class P10818 {
         }
         System.out.println(min +" "+max);
     }
-
 }
