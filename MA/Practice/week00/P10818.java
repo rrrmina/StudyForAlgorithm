@@ -12,7 +12,7 @@ public class P10818 {
         int max = arr[0];
         int min = arr[0];
         for(int i=1; i<n; i++) {
-            if(arr[i]>max) max=arr[i];
+            if(arr[i]>max) max=arr[i]; //Math.max 함수도 좋을듯!
             if(arr[i]<min) min=arr[i];
         }
         System.out.println(min +" "+max);

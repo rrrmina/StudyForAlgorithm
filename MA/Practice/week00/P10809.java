@@ -15,7 +15,7 @@ public class P10809 {
             }
         }
         for(int a : arr) {
-            System.out.print(a + " ");
+            System.out.print(a + " "); // 마지막 공백 여부 조심
         }
     }
 }
