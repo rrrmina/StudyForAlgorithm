@@ -19,7 +19,7 @@ public class P2667 {
         for(int i=0; i<N; i++){
             String str = sc.next();
             for(int j=0; j<N; j++) {
-                map[i][j] = str.charAt(j) - '0'; //왜?
+                map[i][j] = str.charAt(j) - '0';
             }
         }
         count = 0;
