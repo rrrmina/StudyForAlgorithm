@@ -24,12 +24,12 @@ public class week1_2667 {
         map[i][j] = Integer.valueOf(line[j]);
       }
     }
-
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        visited[i][j] = false;
-      }
-    }
+//    default false.........
+//    for (int i = 0; i < n; i++) {
+//      for (int j = 0; j < n; j++) {
+//        visited[i][j] = false;
+//      }
+//    }
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
