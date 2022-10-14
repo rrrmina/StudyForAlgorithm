@@ -1,0 +1,21 @@
+#1
+10 4
+aaa
+bbb
+ccc
+ddd
+eee
+fff
+ggg
+hhh
+iii
+jjj
+10
+jjj
+aaa
+4
+---------------
+jjj
+10
+1
+ddd
