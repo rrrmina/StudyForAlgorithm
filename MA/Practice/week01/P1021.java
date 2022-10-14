@@ -20,6 +20,8 @@ public class P1021 {
         for(int i = 0; i < m; i++) {
             select[i] = sc.nextInt();
         }
+  /*      Arrays.stream(sc.nextLine().split(" "))
+                .forEach(s -> list.add(Integer.valueOf(s)));*/
         int count = 0;
         for(int i = 0; i < m; i++) {
             int target_idx = list.indexOf(select[i]);

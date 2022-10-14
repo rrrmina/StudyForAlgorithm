@@ -12,14 +12,14 @@ public class P23968 {
         for (int i = 0; i < n; i++) {
             array[i] = sc.nextInt();
         }
-        int  cnt = 0;
+        int cnt = 0;
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < n - i; j++) {
                 if (array[j] > array[j + 1]) {
                     swap(array, j, j + 1);
                     cnt++;
                     if(cnt==k) {
-                        System.out.println(Math.min(array[j], array[j+1])+" "+Math.max(array[j], array[j+1]));
+                        System.out.println(array[j+1]+" "+array[j]); // 비교 필요없음
                         break;
                     }
                 }
