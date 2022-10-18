@@ -1,4 +1,4 @@
-# What Is ArrayList
+# What Is List
 ### Content
 - Linear List
     - Contiguous List
