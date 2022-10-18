@@ -15,7 +15,7 @@
 - 가장 최근에 입력된 데이터: top, 스택은 top에서만 삽입, 삭제, 읽기 동작이 발생
 - 가장 먼저 입력되어 바닥에 깔린 데이터: bottom
 - 자바에서 Stack은 java.urtil.Stack을 import하면 바로 사용 가능
-    ![stack](/Img/stack.png)
+    ![stack](./Img/stack.png)
 
 <br/>
 
