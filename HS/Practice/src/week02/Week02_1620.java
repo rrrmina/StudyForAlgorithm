@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
+// 나는야 포켓몬 마스터 이다솜
 public class Week02_1620 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

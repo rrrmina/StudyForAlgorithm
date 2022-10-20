@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.Comparator;
 
+// 단어 정렬
 public class Week02_1181 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
