@@ -1,26 +1,29 @@
-from sys import stdin
+from sys import stdin, stdout
 from time import perf_counter #delete
+import cProfile
+
+
+
+def find_bigger_num(N, NumStack):
+    w_line = stdout.write
+    for i in range(N):
+        flag = 0
+        for j in range(i + 1, N):
+            if NumStack[j] > NumStack[i]:
+                w_line(f'{NumStack[j]} ')
+                flag = 1
+                break
+        if not flag:
+            w_line(str(-1) + ' ')
 
 def main():
     r_line = stdin.readline
     N = int(r_line())
-    NumStack = list(map(int, r_line().split())) # O(n)
-    NumStackDict = dict()
-    for i in range(N): #O(2n)
-        NumStackDict[i] = NumStack[i]
-    SortedNumStack = sorted(NumStack) # O(3n)
-    SortedDict = dict()
-    for i in range(N): #O(4n)
-        SortedDict[SortedNumStack[i]] = i
-    max_num = SortedNumStack[-1]
-    del SortedNumStack
-    del NumStack
+    NumStack = list(map(int, r_line().split()))
+    find_bigger_num(N, NumStack)
 
-    for i in range(N): # O(2n + n)
-        print(NumStackDict[SortedDict[NumStackDict[i + 1]]], end=" ")
-
-if __name__ == '__main__':
-    start = perf_counter() #delete
-    main()
-    print("")
-    print(perf_counter() - start) #delete
+start = perf_counter()
+# cProfile.run('main()')
+main()
+print(f"\n{perf_counter() - start}")
+# cProfile.run('main()')
