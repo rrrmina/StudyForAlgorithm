@@ -3,8 +3,8 @@
 ### _1. 개념과 원리_
 맨 위에 있는 자료를 들어내 사용하고 새 자료를 맨 위에 쌓는다.   
 데이터를 이런 방식으로 쌓고 빼는 자료구조가 스택이다.   
-뒤에 들어온 것이 가장 먼저 나가는 구조라는 듯으로 LIFO<span style="color:grey"><sup>Last-In-First-Out</sup></span>란 별칭이 붙었다.   
-스택은 맨 위의 원소<span style="color:grey"><sup>스택 탑(stack top)</sup></span>만 접근 가능한 것이 특징이다.
+뒤에 들어온 것이 가장 먼저 나가는 구조라는 듯으로 LIFO<span style="color:grey"><sup>_Last-In-First-Out_</sup></span>란 별칭이 붙었다.   
+스택은 맨 위의 원소<span style="color:grey"><sup>_스택 탑(stack top)_</sup></span>만 접근 가능한 것이 특징이다.
 
 ### _2. 추상 자료형(ADT)_
 |work|description|
