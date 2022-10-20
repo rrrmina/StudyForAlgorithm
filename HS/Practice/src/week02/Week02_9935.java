@@ -3,7 +3,7 @@ package week02;
 import java.io.*;
 import java.util.Stack;
 
-// 문자열 폭발
+// 문자열 폭발 9935
 public class Week02_9935 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

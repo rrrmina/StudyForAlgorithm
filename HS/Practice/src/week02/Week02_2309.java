@@ -3,7 +3,7 @@ package week02;
 import java.io.*;
 import java.util.Arrays;
 
-// 일곱 난쟁이
+// 일곱 난쟁이 2309
 public class Week02_2309 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

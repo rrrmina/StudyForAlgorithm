@@ -5,7 +5,7 @@ import java.util.Stack;
 import java.util.StringTokenizer;
 
 
-// 오큰수
+// 오큰수 17298
 public class Week02_17298 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

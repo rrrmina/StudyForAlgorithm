@@ -3,7 +3,7 @@ package week02;
 import java.io.*;
 import java.util.*;
 
-// 듣보잡
+// 듣보잡 1764
 public class Week02_1764 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

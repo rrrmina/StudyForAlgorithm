@@ -3,7 +3,7 @@ package week02;
 
 import java.io.*;
 
-// 스택
+// 스택 10828
 public class Week02_10828 {
     public static class ArrayStack {
         private int top;
