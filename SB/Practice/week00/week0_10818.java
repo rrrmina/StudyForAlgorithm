@@ -1,4 +1,5 @@
-package Baekjoon;
+package SB.Practice.week00;
+
 import java.util.Scanner;
 
 public class week1_10818 {

@@ -1,4 +1,4 @@
-package Baekjoon.week2;
+package SB.Practice.week01;
 
 import java.util.ArrayList;
 import java.util.Arrays;
