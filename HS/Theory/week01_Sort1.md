@@ -1,4 +1,4 @@
-# What Is Sort
+# What Is Sort(Selection, Insertion, Bubble)
 ### Content
 - Selection Sort
 - Insertion Sort

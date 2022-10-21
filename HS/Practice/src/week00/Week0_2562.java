@@ -1,6 +1,5 @@
-package week0;
+package week00;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Week0_2562 {
