@@ -18,7 +18,6 @@ public class P1764 {
         HashSet<String> listen = new HashSet<>();
         for (int i = 0; i < n; i++) listen.add(br.readLine());
 
-
         ArrayList<String> ls = new ArrayList<>();
         for (int i = 0; i < m; i++) {
             String see = br.readLine();
