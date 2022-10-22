@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.StringTokenizer;
 // 일곱 난쟁이 https://www.acmicpc.net/problem/2309
 public class P2309 {
     public static void main(String[] args) throws IOException {

@@ -2,7 +2,7 @@ package MA.Practice.week02;
 
 import java.util.Scanner;
 import java.util.Stack;
-
+// 오큰수 https://www.acmicpc.net/problem/17298
 public class P17298 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
