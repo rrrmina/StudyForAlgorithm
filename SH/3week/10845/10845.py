@@ -28,7 +28,7 @@ class Queue:
 
 def main():
     from sys import stdin
-    r_line = stdin.readline #역시나 input()으로 받으면 시간초과
+    r_line = stdin.readline)
     N = int(r_line())
     queue = Queue()
     for _ in range(N):
