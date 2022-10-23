@@ -16,12 +16,9 @@ def main():
 
     for i in get_all_cases:
         result = givenFormula(i, N)
-        if max < result:
+        if max < result: 
             max = result
-    print(result)
-            
+    print(max)
 
 if __name__ == '__main__':
     main()
-
-#순서대로 제일큰수, 제일작은수,그다음 큰수, 그다음 작은수 .... 이런식으로 하면..?
