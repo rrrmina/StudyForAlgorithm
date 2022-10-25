@@ -1,4 +1,5 @@
 package MA.Practice.week03;
+// 큐 https://www.acmicpc.net/problem/10845
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,7 +8,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-// 큐 https://www.acmicpc.net/problem/10845
 public class P10845 {
     public static void main(String args[]) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
