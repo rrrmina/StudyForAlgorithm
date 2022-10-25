@@ -15,3 +15,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+# itertools.product 의 시간복잡도는 O(m * n)이며(이 코드에서는 O(i)) sum의 시간복잡도는  O(n)이므로
+# 최종 시간복잡도는 O(n^4)가 됨.
