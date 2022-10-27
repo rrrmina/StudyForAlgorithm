@@ -24,8 +24,9 @@ def getCloserChannel(N, brokenButton):
                     minusFlag = 1
                     break
         # Flag가 없는 경우는 조건을 만족하는 경우임.
-        if not plusFlag and not minusFlag: # 그런데 플러스하고 마이너스 둘 다 Flag가 있는 경우가 있음.
+        if not plusFlag and not minusFlag: # 그런데 플러스하고 마이너스 둘 다 Flag가 없는(둘다 조건을 만족하는) 경우가 있음.
             if len(str(Nplus)) > len(str(Nminus)): # 반례3 : 이 때 각각 글자길이(채널입력횟수)를 구해서 더 짧은 것을 구해야함.
+            ## 추가. 생각해보니 굳이 누가 더 짧은지 구할 필요가 없음. Nminus가 무조건 더 채널입력횟수가 짧은 숫자임.
                 return Nminus
             else:
                 return Nplus
@@ -59,9 +60,9 @@ def main():
     startChannel = getCloserChannel(N, brokenButton)
     startChannelLen = len(str(startChannel))
     startChannelMoveCount = getMoveOneChannelCount(startChannel, N) # 주어진 채널번호까지 가장 가까운 조건을 만족하는 채널 구함.
-    if moveCount <= startChannelLen + startChannelMoveCount: # 그냥 채널번호까지 +,-로 가는 것보다 채널번호 누르고 이동하는게 많으면
+    if moveCount <= startChannelLen + startChannelMoveCount: # 그냥 채널번호까지 +,-로 가는 것보다 채널번호 누른 후에 +,-로 이동하는게 많으면
         return print(moveCount) # 그냥 +,-로 이동
     else:
-        return print(startChannelLen + startChannelMoveCount) # 채널입력후 +,-로 이동.
+        return print(startChannelLen + startChannelMoveCount) # 아니면 채널입력후 +,-로 이동.
 
 main()
