@@ -15,17 +15,17 @@ public class P10819 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());
         max = 0;
-        df(arr, 0, n);
+        bf(arr, 0, n);
         System.out.println(max);
     }
-    public static void df(int[] a, int cnt, int n){
+    public static void bf(int[] a, int cnt, int n){
         if(cnt==n){
             findMaxSum(n, a);
             return;
         }
         for(int i=cnt; i<n; i++){
             swap(a, i, cnt);
-            df(a, cnt+1, n);
+            bf(a, cnt+1, n);
             swap(a, i, cnt);
         }
     }
