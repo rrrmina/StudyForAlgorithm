@@ -11,12 +11,12 @@ int main() {
     }
     int max_index = n - 1;
     int count = 0;
-    while (k != 0) {
-        if (coin_list[max_index] > k)
+    while (k != 0) { // K가 0이 아닌동안
+        if (coin_list[max_index] > k) // 동전 가치가 k보다 크면 인덱스를 하나 낮춤.
             max_index--;
         else {
-            k -= coin_list[max_index];
-            count++;
+            k -= coin_list[max_index]; // k에서 해당 리스트에 있는 동전의 가치만큼 뺌.
+            count++; //카운트 증가.
         }
     }
     printf("%d", count);
