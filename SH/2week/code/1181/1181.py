@@ -19,7 +19,6 @@ def main():
 
     for i in string_list:
         print(i)
-
 if __name__ == '__main__':
     main()
 
