@@ -15,26 +15,26 @@ public class P3078 {
         int k = Integer.parseInt(st.nextToken());
         long answer = 0;
 
-        Queue<Integer>[] studnets = new Queue[21];
+        Queue<Integer>[] students = new Queue[21];
 
         for (int i = 0; i <= 20; i++) {
-            studnets[i] = new LinkedList<>();
+            students[i] = new LinkedList<>();
         }
 
         for (int i=0; i<n; i++) {
             int name = br.readLine().length();
-            if (studnets[name].isEmpty()) {
-                studnets[name].offer(i);
+            if (students[name].isEmpty()) {
+                students[name].offer(i);
                 continue;
             }
-            while (i - studnets[name].peek() > k) {
-                studnets[name].poll();
-                if (studnets[name].isEmpty()) {
+            while (i - students[name].peek() > k) {
+                students[name].poll();
+                if (students[name].isEmpty()) {
                     break;
                 }
             }
-            answer += studnets[name].size();
-            studnets[name].offer(i);
+            answer += students[name].size();
+            students[name].offer(i);
         }
         System.out.println(answer);
     }
