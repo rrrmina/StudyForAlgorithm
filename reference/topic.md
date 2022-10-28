@@ -42,3 +42,32 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/17298
 - https://www.acmicpc.net/problem/1764
 - https://www.acmicpc.net/problem/9935 
+
+## 3주차
+#### 개념 정리
+- Queue (array / list / priority / deque / circular)
+- Exhaustive Search (완전탐색, Brute Force Search)
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/1107
+- https://www.acmicpc.net/problem/1451
+- https://www.acmicpc.net/problem/9095
+- https://www.acmicpc.net/problem/10819
+- https://www.acmicpc.net/problem/10845
+- https://www.acmicpc.net/problem/2164
+- https://www.acmicpc.net/problem/3078
+
+## 4주차
+#### 개념 정리
+- HashMap 
+- Greedy (탐욕법)
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/11047
+- https://www.acmicpc.net/problem/1931
+- https://www.acmicpc.net/problem/11399
+- https://www.acmicpc.net/problem/1541
+- https://www.acmicpc.net/problem/14425 
+- https://www.acmicpc.net/problem/1269
+- https://www.acmicpc.net/problem/11478
+- https://www.acmicpc.net/problem/1253
