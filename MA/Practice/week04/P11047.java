@@ -16,7 +16,6 @@ public class P11047 {
             coin[i] = Integer.parseInt(br.readLine());
         }
         int count = 0;
-
         for(int i = n - 1; i >= 0; i--) {
             if(coin[i] <= k) {
                 count += (k / coin[i]);
