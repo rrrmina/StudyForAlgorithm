@@ -4,31 +4,25 @@ from sys import stdin
 def main():
     r_line = stdin.readline
     n = int(r_line())
-    tempInputList = list(map(int, r_line().split()))
-    numbersDict = dict()
-    for i in range(n):
-        try:
-            numbersDict[tempInputList[i]].add(i)
-        except KeyError:
-            numbersDict[tempInputList[i]] = set()
-            numbersDict[tempInputList[i]].add(i)
-    dictKeysList = list(numbersDict.keys())
+    num_list = list(map(int, r_line().split()))
+    num_list.sort()
+    start = 0
+    end = 1
     count = 0
-    OutLoopVisited = set()
-    InLoopVisited = set()
-    answerVisitedDict = dict()
-    for i in range(len(dictKeysList)):
-        for j in range(i + 1, len(dictKeysList)):
-            if numbersDict[dictKeysList[i]] not in OutLoopVisited or numbersDict[dictKeysList[j]] not in InLoopVisited: 
-                if dictKeysList[i] + dictKeysList[j] in set(dictKeysList):
-                    try:
-                        if answerVisitedDict[dictKeysList[i] + dictKeysList[j]]:
-                            pass
-                    except KeyError:
-                        count += len(numbersDict[dictKeysList[i]]) * len(numbersDict[dictKeysList[j]])
-                        OutLoopVisited.update(numbersDict[dictKeysList[i]])
-                        InLoopVisited.update(numbersDict[dictKeysList[j]])
-                        answerVisitedDict[dictKeysList[i] + dictKeysList[j]] = True
+    find_index = set()
+    while start < len(num_list) - 1 and end < len(num_list):
+        for to_find in range(len(num_list)):
+            if num_list[to_find] == num_list[start] + num_list[end]:
+                if to_find not in find_index and to_find != start and to_find != end:
+                    count += 1
+                    find_index.add(to_find)
+        if start < end - 1:
+            start += 1
+        elif end < len(num_list) - 1:
+            end += 1
+            start = 0
+        else:
+            break
     print(count)
 
 if __name__ == '__main__':
