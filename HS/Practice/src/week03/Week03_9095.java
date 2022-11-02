@@ -2,6 +2,7 @@ package week03;
 
 import java.io.*;
 
+// 1,2,3 더하기
 public class Week03_9095 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
