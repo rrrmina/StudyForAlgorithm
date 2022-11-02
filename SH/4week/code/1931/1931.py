@@ -1,45 +1,20 @@
 from sys import stdin
-from time import perf_counter #delete
 
 
 def main():
-    start = perf_counter() #delete
     r_line = stdin.readline
     n = int(r_line())
-    meeting = dict()
-    for _ in range(n): # O(n)
-        temp1, temp2 = map(int, r_line().split())
-        if meeting.get(temp1):
-            if meeting[temp1] > temp2:
-                meeting[temp1] = temp2
-        else:
-            meeting[temp1] = temp2
-    temp = sorted(meeting.items())
-    max_finish_time = temp[-1][-1]
-    meeting = dict(temp)
-
-    start_time = 0
-    max_count = 0
-    operationCount = 0 #delete
-    for i in meeting.keys(): # O(n)
-        operationCount += 1
-        count = 0
-        start_time = i
-        while start_time < max_finish_time: #O (n^2)
-            operationCount += 1
-            try:
-                start_time = meeting[start_time] + 1
-            except KeyError:
-                start_time += 1
-                continue
-            count += 1
-            if start_time >= max_finish_time:
-                if count > max_count:
-                    max_count = count
-                break
-    print(max_count)
-    print(f'operation : {operationCount}')
-    print(f'time : {perf_counter() - start}')
+    meetingTime = list()
+    for _ in range(n):
+        meetingTime.append(list(map(int, r_line().split())))
+    meetingTime.sort(key=lambda x:(x[1], x[0])) # 끝나는 시간을 기준으로 먼저 정렬, 끝나는 시간이 같은 경우 시작시간을 기준으로 정렬, #3 참조
+    finish_time = 0
+    count = 0
+    for i in meetingTime:
+        if i[0] >= finish_time: # 만약 시작시간이 끝나는 시간보다 크거나 같을 때 #2 참조
+            finish_time = i[1] # 끝나는 시간을 현재 끝나는 시간으로 바꾸고
+            count += 1 # count증가
+    print(count)
 
 if __name__ == '__main__':
     main()
