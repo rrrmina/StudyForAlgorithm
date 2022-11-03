@@ -3,6 +3,7 @@ package week03;
 import java.io.*;
 import java.util.StringTokenizer;
 
+// 차이를 최대로
 public class Week03_10819 {
     static int max = 0;
 
