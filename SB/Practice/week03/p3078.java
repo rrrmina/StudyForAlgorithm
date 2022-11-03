@@ -28,7 +28,7 @@ public class p3078 {
       if(queues[length].isEmpty()){
         queues[length].offer(i);
       } else {
-        while(i- queues[length].peek() > K){
+        while(i- queues[length].peek() > K){ // 좋은 친구가 아니면
           queues[length].poll();
           if(queues[length].isEmpty()){
             break;

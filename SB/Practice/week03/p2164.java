@@ -21,8 +21,6 @@ public class p2164 {
 
     while (cards.size() > 1){
       cards.remove(0);
-      if (cards.size() == 1)
-        break;
       int card = (Integer) cards.remove(0);
       cards.add(card);
     }
