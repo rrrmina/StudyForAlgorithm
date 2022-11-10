@@ -42,7 +42,5 @@ public class Week04_1269 {
         bw.write(aMinusB + bMinusA + "");
         bw.flush();
         bw.close();
-
-
     }
 }
