@@ -2,7 +2,7 @@ package week05;
 
 import java.io.*;
 
-//
+// 곱셈, 1629
 public class Week05_1629 {
     static long result;
 

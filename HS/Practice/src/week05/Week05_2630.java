@@ -1,7 +1,6 @@
 package week05;
 
 import java.io.*;
-import java.util.StringTokenizer;
 
 // 색종이 만들기, 2630
 public class Week05_2630 {
