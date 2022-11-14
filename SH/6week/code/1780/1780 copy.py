@@ -54,4 +54,6 @@ def main():
     print(oneCount)
 
 if __name__ == '__main__':
-    main() 
+    # main() 
+    from cProfile import run
+    run('main()')
