@@ -28,22 +28,22 @@ public class Week05_1780 {
         }
 
         size = size / 3;
-        partition(y, x, size);
-        partition(y, x + size, size);
-        partition(y, x + size * 2, size);
-        partition(y + size, x, size);
-        partition(y + size, x + size, size);
-        partition(y + size, x + size * 2, size);
-        partition(y + size * 2, x, size);
-        partition(y + size * 2, x + size, size);
-        partition(y + size * 2, x + size * 2, size);
+        partition(y, x, size); // 왼쪽 상단
+        partition(y, x + size, size); // 중앙 상단
+        partition(y, x + size * 2, size); // 오른쪽 상단
+        partition(y + size, x, size); // 왼쪽
+        partition(y + size, x + size, size); // 중앙
+        partition(y + size, x + size * 2, size); // 오른쪽
+        partition(y + size * 2, x, size); // 왼쪽 하단
+        partition(y + size * 2, x + size, size); // 중앙 하단
+        partition(y + size * 2, x + size * 2, size); // 오른쪽 하단
     }
 
     private static boolean checkNum(int y, int x, int size) {
-        String number = input[y][x];
+        String value = input[y][x];
         for (int i = y; i < y + size; i++) {
             for (int j = x; j < x + size; j++) {
-                if (!input[i][j].equals(number)) {
+                if (!input[i][j].equals(value)) {
                     return false;
                 }
             }
