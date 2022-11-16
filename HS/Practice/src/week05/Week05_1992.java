@@ -15,21 +15,17 @@ public class Week05_1992 {
 
     private static void partition(int y, int x, int size) {
         if (checkBlackAndWhite(y, x, size)) {
-            if (input[y][x].equals("0")) {
-                sb.append("0");
-            } else if (input[y][x].equals("1")) {
-                sb.append("1");
-            }
+            sb.append(input[y][x]);
             return;
         }
 
         size = size / 2;
 
         sb.append("(");
-        partition(y, x, size);
-        partition(y, x + size, size);
-        partition(y + size, x, size);
-        partition(y + size, x + size, size);
+        partition(y, x, size); // 2사분면
+        partition(y, x + size, size); // 1사분면
+        partition(y + size, x, size); // 3사분면
+        partition(y + size, x + size, size); // 4사분면
         sb.append(")");
     }
 
