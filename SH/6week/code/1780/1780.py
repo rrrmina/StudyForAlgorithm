@@ -1,41 +1,38 @@
 from sys import stdin, setrecursionlimit
 recurLimit = 2147483647
 setrecursionlimit(recurLimit)
-from itertools import chain
 
 
 zeroCount, oneCount, minusCount = 0, 0, 0
-_ = None
-
-def checkAllSameColor(paperSquare, start, end, start2, end2):
-    checkSet = set()
-    for i in range(start, end):
-        for j in range(start2, end2):
-            checkSet.add(paperSquare[i][j])
-            if len(checkSet) > 1: return None
-    if checkSet == {1}:
-        return 1
-    if checkSet == {0}:
-        return 0
-    if checkSet == {-1}:
-        return -1
-    return None
-
-
 def cuttingPaper(paperSquare, n):
-    global zeroCount, oneCount, minusCount, _
-    isAllSame = checkAllSameColor(paperSquare, n)
-    if isAllSame != _:
-        if isAllSame == 1:
+    global zeroCount, oneCount, minusCount
+    flag = 1
+    for i in paperSquare:
+        for j in i:
+            if j != paperSquare[0][0]:
+                flag = 0
+                break
+        else:
+            continue
+        break
+    if flag:
+        if paperSquare[0][0] == 1:
             oneCount += 1
-            return _
-        if isAllSame == 0:
+        if paperSquare[0][0] == 0:
             zeroCount += 1
-            return _
-        if isAllSame == -1:
+        if paperSquare[0][0] == -1:
             minusCount += 1
-            return _
-    
+        return None
+    else:
+        cuttingPaper([row[0:n//3] for row in paperSquare[0:n//3]], n//3)
+        cuttingPaper([row[0:n//3] for row in paperSquare[n//3:(2*n)//3]], n//3)
+        cuttingPaper([row[0:n//3] for row in paperSquare[(2*n)//3:]], n//3)
+        cuttingPaper([row[n//3:(2*n)//3] for row in paperSquare[0:n//3]], n//3)
+        cuttingPaper([row[n//3:(2*n)//3] for row in paperSquare[n//3:(2*n)//3]], n//3)
+        cuttingPaper([row[n//3:(2*n)//3] for row in paperSquare[(2*n)//3:]], n//3)
+        cuttingPaper([row[(2*n)//3:] for row in paperSquare[0:n//3]], n//3)
+        cuttingPaper([row[(2*n)//3:] for row in paperSquare[n//3:(2*n)//3]], n//3)
+        cuttingPaper([row[(2*n)//3:] for row in paperSquare[(2*n)//3:]], n//3)
 
 def main():
     global zeroCount, oneCount, minusCount
