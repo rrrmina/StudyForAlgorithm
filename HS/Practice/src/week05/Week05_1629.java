@@ -26,9 +26,9 @@ public class Week05_1629 {
 
         if (b % 2 == 1) {
             return (temp * temp % c) * a % c;
+        }else {
+            return temp * temp % c;
         }
-        return temp * temp % c;
-
     }
 
     private static String[] input() throws IOException {
