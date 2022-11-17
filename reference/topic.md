@@ -87,7 +87,17 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/9934
 - https://www.acmicpc.net/problem/11725 
 
+## 6주차
+#### 개념 정리
+- Divide and Conquer (분할 정복)
+- Tree (simple / binary-search / segment)
 
+#### 문제 풀이
+- 5주차 복습
+- https://www.acmicpc.net/problem/2740
+- https://www.acmicpc.net/problem/13116
+- https://www.acmicpc.net/problem/1991
+- https://www.acmicpc.net/problem/11728 
 
 
 
