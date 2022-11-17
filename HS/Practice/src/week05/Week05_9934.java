@@ -20,29 +20,14 @@ public class Week05_9934 {
 
     private static void makeOutput() throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        for (int i = 0; i < result.size(); i++) {
-            for (int j = 0; j < result.get(i).size(); j++) {
-                bw.write(result.get(i).get(j) + " ");
+        for (List<Integer> list : result) {
+            for (int i : list) {
+                bw.write(i+" ");
             }
             bw.write("\n");
         }
         bw.flush();
         bw.close();
-    }
-
-    private static void makeInput() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        k = Integer.parseInt(br.readLine());
-        input = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        while (st.hasMoreTokens()) {
-            input.add(Integer.valueOf(st.nextToken()));
-        }
-
-        result = new ArrayList<>();
-        for (int i = 0; i < k; i++) {
-            result.add(new ArrayList<>());
-        }
     }
 
     private static void inOrder(int start, int end, int level) {
@@ -53,5 +38,20 @@ public class Week05_9934 {
         result.get(level).add(input.get(mid));
         inOrder(start, mid - 1, level + 1);
         inOrder(mid + 1, end, level + 1);
+    }
+
+    private static void makeInput() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        k = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        input = new ArrayList<>();
+        while (st.hasMoreTokens()) {
+            input.add(Integer.valueOf(st.nextToken()));
+        }
+
+        result = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            result.add(new ArrayList<>());
+        }
     }
 }
