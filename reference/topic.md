@@ -99,5 +99,19 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/1991
 - https://www.acmicpc.net/problem/11728 
 
+## 7주차
+#### 개념 정리
+- Recursion (재귀)
+- Heap (max / min)
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/11729
+- https://www.acmicpc.net/problem/2447
+- https://www.acmicpc.net/problem/6603
+- https://www.acmicpc.net/problem/11279
+- https://www.acmicpc.net/problem/1074
+- https://www.acmicpc.net/problem/1927
+- https://www.acmicpc.net/problem/2075
+- https://www.acmicpc.net/problem/11004
 
 
