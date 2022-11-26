@@ -27,7 +27,7 @@ public class week07_11729 {
 
     private static void ouput(int n) throws IOException {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(String.valueOf(n) + "\n");
+        bw.write(String.valueOf(count) + "\n");
         bw.write(sb.toString());
         bw.flush();
         bw.close();
