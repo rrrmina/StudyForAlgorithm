@@ -2,7 +2,7 @@ from sys import stdin, setrecursionlimit
 setrecursionlimit(100000000)
 
 
-class maxHeap:
+class minHeap:
     def __init__(self):
         self.tree = list()
 
@@ -28,7 +28,7 @@ class maxHeap:
         if not child:
             return
         parent = (child - 1) // 2
-        if self.tree[child] > self.tree[parent]:
+        if self.tree[child] < self.tree[parent]:
             self.tree[child], self.tree[parent] = self.tree[parent], self.tree[child]
             self.repairTree(parent)
         return
@@ -43,11 +43,11 @@ class maxHeap:
         elif child1 > lastIndex and child2 > lastIndex:
             return
         else:
-            if self.tree[child1] > self.tree[child2]:
+            if self.tree[child1] < self.tree[child2]:
                 node = child1
             else:
                 node = child2
-        if self.tree[node] > self.tree[parent]:
+        if self.tree[node] < self.tree[parent]:
             self.tree[node], self.tree[parent] = self.tree[parent], self.tree[node]
             self.seep(node)
             return
@@ -55,7 +55,7 @@ class maxHeap:
 def main():
     r_line = stdin.readline
     n = int(r_line())
-    heap = maxHeap()
+    heap = minHeap()
     for _ in range(n):
         heap.determineOperation(int(r_line()))
 
