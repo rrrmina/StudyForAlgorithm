@@ -114,4 +114,18 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/2075
 - https://www.acmicpc.net/problem/11004
 
+## 8주차
+#### 개념 정리
+- Graph (array / list)
+- DFS, BFS (깊이우선탐색, 너비우선탐색)
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/10026
+- https://www.acmicpc.net/problem/1743
+- https://www.acmicpc.net/problem/1260
+- https://www.acmicpc.net/problem/2606
+- https://www.acmicpc.net/problem/1303
+- https://www.acmicpc.net/problem/2178
+- https://www.acmicpc.net/problem/4963
+- https://www.acmicpc.net/problem/5567
 
