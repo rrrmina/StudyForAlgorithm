@@ -129,3 +129,15 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/4963
 - https://www.acmicpc.net/problem/5567
 
+## 9주차
+#### 개념 정리
+- HashSet
+- Dynamic Programming (DP, 동적프로그래밍)
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/1003
+- https://www.acmicpc.net/problem/22252
+- https://www.acmicpc.net/problem/1890
+- https://www.acmicpc.net/problem/13915
+- https://www.acmicpc.net/problem/1965
+- https://www.acmicpc.net/problem/4358
