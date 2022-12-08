@@ -17,7 +17,7 @@ public class Week09_1890 {
                 map[i][j] = Integer.parseInt(temp[j]);
             }
         }
-        dp[0][0] = 1;
+        dp[0][0] = 1; // 방문한 위치에 +1을 하면 마지막 위치에서 전체 경로 수 찾을 수 있다.
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (i == n - 1 && j == n - 1) {
