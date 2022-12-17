@@ -142,3 +142,15 @@ Array, Big-O 표기법
 - https://www.acmicpc.net/problem/13915
 - https://www.acmicpc.net/problem/1965
 - https://www.acmicpc.net/problem/4358
+
+## 10주차
+#### 개념 정리
+- Backtracking
+
+#### 문제 풀이
+- https://www.acmicpc.net/problem/15649
+- https://www.acmicpc.net/problem/15686
+- https://www.acmicpc.net/problem/14888
+- https://www.acmicpc.net/problem/14889
+- https://www.acmicpc.net/problem/16166
+- https://www.acmicpc.net/problem/25602
