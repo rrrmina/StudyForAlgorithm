@@ -1,45 +1,32 @@
 import sys
-import itertools
+from itertools import combinations as comb
+
+
+def getPlayerStats(team: tuple, teamStats: list)->int:
+	sum = 0
+	for i in comb(team, 2):
+		sum += teamStats[i[0]][i[1]] + teamStats[i[1]][i[0]]
+	return sum
 
 def main():
 	input = sys.stdin.readline
-	comb = itertools.combinations
 	n = int(input())
-	s = [[0]*(n + 1) for i in range(n + 1)]
-	sqtopSgmnt = dict()
-	sqdownSgmnt = dict()
-	sum_dict = dict()
+	teamStats = [[0]*(n + 1) for _ in range(n + 1)]
+	players = set(range(1, n + 1)) #player정의
+	result_set = set()
 	for i in range(1, n + 1):
-		s[i] = [0] + list(map(int, input().split()))
-	col_index = col_init = 2
-	row_index = 1
-	while row_index < n + 1:
-		while col_index < n + 1:
-			try:
-				sqtopSgmnt[(row_index, col_index)].append(s[row_index][col_index])
-				sqdownSgmnt[(col_index, row_index)].append(s[col_index][row_index])
-			except KeyError:
-				sqtopSgmnt[(row_index, col_index)] = [s[row_index][col_index]]
-				sqdownSgmnt[(col_index, row_index)] = [s[col_index][row_index]]
-			col_index += 1
-		col_init += 1
-		col_index = col_init
-		row_index += 1
-	# print('top')
-	# print(sqtopSgmnt)
-	# print('down')
-	# print(sqdownSgmnt)
-	for key1, value1, value2 in zip(sqtopSgmnt.keys(), sqtopSgmnt.values(), sqdownSgmnt.values()):
-		sum_dict[key1] = sum(value1 + value2)
-	print(sum_dict)
-	for i in comb(sum_dict.keys(), n//2):
-		temp = tuple()
-		for j in i:
-			temp += j
-		if len(set(temp)) == n:
-			for k in i:
-				print(f"{k} {sum_dict[k]}")
-			print('finish')
-
+		teamStats[i] = [0] + list(map(int, input().split()))
+	temp = list(comb(players, n//2))
+	temp = temp[0:len(temp)//2] #어차피 뒤에서 뺄거기 때문에 반만 필요함.
+	for i in temp:
+		team1, team2 = i, tuple(players - set(i)) #여기서 빼줌 ({1,2,3,4} - {1,2} = {3,4})
+		stat1, stat2 = getPlayerStats(team1, teamStats), getPlayerStats(team2, teamStats) # 각 팀의 능력치를 구해줌.
+		result = abs(stat1 - stat2)
+		if result == 0: # result가 0이면 바로 출력
+			return print(0)
+		else: # 아니면 result set에 담음.
+			result_set.add(result)
+	print(min(result_set)) # 최솟값 출력.
+		
 if __name__ == '__main__':
 	main()
