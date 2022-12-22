@@ -32,10 +32,14 @@ def main():
 	for key1, value1, value2 in zip(sqtopSgmnt.keys(), sqtopSgmnt.values(), sqdownSgmnt.values()):
 		sum_dict[key1] = sum(value1 + value2)
 	print(sum_dict)
-	# for i in comb(sum_list, n//2):
-	# 	sum = 0
-	# 	for j in comb(i, 2):
-	# 		sum += j[0] - j[1]
-	# 	print(sum)
+	for i in comb(sum_dict.keys(), n//2):
+		temp = tuple()
+		for j in i:
+			temp += j
+		if len(set(temp)) == n:
+			for k in i:
+				print(f"{k} {sum_dict[k]}")
+			print('finish')
+
 if __name__ == '__main__':
 	main()
