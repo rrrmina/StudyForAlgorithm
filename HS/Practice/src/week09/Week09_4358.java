@@ -14,7 +14,7 @@ public class Week09_4358 {
         String input;
         while (true) {
             input = br.readLine();
-            if (input == null || input.equals("")) {
+            if (input == null) {
                 break;
             }
             total++;

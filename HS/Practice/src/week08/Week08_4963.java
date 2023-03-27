@@ -9,22 +9,38 @@ public class Week08_4963 {
     static int count;
     static int w;
     static int h;
-    static int[] dx = {-1, -1, -1, 0, 1, 1, 1, 0}; // 12시부터 반시계 방향
+    static int[] dx = {-1, -1, -1, 0, 1, 1, 1, 0}; // 11시부터 반시계 방향
     static int[] dy = {-1, 0, 1, 1, 1, 0, -1, -1};
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         while (true) {
-            input();
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            w = Integer.parseInt(st.nextToken());
+            h = Integer.parseInt(st.nextToken());
             if (w == 0 && h == 0) {
                 break;
             }
+            map = new int[h][w];
+            visited = new boolean[h][w];
+            count = 0;
+            for (int i = 0; i < h; i++) {
+                st = new StringTokenizer(br.readLine());
+                int j = 0;
+                while (st.hasMoreTokens()) {
+                    map[i][j++] = Integer.parseInt(st.nextToken());
+                }
+            }
+
             solve();
-            output();
         }
+        output();
     }
 
     private static void output() throws IOException {
-        System.out.println(count);
+        System.out.println(sb);
     }
 
     private static void solve() {
@@ -36,34 +52,18 @@ public class Week08_4963 {
                 }
             }
         }
+        sb.append(count + "\n");
     }
 
-    private static void dfs(int x, int y) {
-        visited[x][y] = true;
+    private static void dfs(int col, int row) {
+        visited[col][row] = true;
         for (int i = 0; i < 8; i++) {
-            int newX = x + dx[i];
-            int newY = y + dy[i];
-            if (newY >= 0 && newX >= 0 && newY < w && newX < h) {
-                if (map[newX][newY] == 1 && !visited[newX][newY]) {
-                    dfs(newX, newY);
+            int newW = row + dx[i];
+            int newH = col + dy[i];
+            if (newW >= 0 && newH >= 0 && newW < w && newH < h) {
+                if (map[newH][newW] == 1 && !visited[newH][newW]) {
+                    dfs(newH, newW);
                 }
-            }
-        }
-    }
-
-    private static void input() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        w = Integer.parseInt(st.nextToken());
-        h = Integer.parseInt(st.nextToken());
-        map = new int[h][w];
-        visited = new boolean[h][w];
-        count = 0;
-        for (int i = 0; i < h; i++) {
-            st = new StringTokenizer(br.readLine());
-            int j = 0;
-            while (st.hasMoreTokens()) {
-                map[i][j++] = Integer.parseInt(st.nextToken());
             }
         }
     }

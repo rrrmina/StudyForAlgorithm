@@ -13,7 +13,7 @@ public class Week09_13915 {
         StringBuilder sb;
         StringBuilder result = new StringBuilder();
 
-        while ((testcaseStr = br.readLine()) != null && !testcaseStr.equals("")) { // 이거 없으면 50%에서 틀렸습니다 나온다
+        while ((testcaseStr = br.readLine()) != null) { // 이거 없으면 50%에서 틀렸습니다 나온다
             HashSet<String> set = new HashSet<>();
             int testcase = Integer.parseInt(testcaseStr);
             for (int i = 0; i < testcase; i++) {
